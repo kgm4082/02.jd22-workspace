@@ -36,7 +36,6 @@ INSERT INTO- 데이터베이스에 새 데이터를 삽입합니다.
 -> DDL
 CREATE DATABASE- 새 데이터베이스 생성
 ALTER DATABASE- 데이터베이스 수정
-DROP DATABASE- 데이터베이스 삭제
 CREATE TABLE- 새 테이블 생성
 ALTER TABLE- 테이블 수정
 DROP TABLE-테이블 삭제
