@@ -1,4 +1,4 @@
-// Java03. 연산자와 제어문
+// Java03. 연산자와 문자형과 수학함수
 public class Java03 {
     public static void main(String[] args) {
         /* [ 자바 연산자 ] 
@@ -76,5 +76,94 @@ public class Java03 {
         // false의 결과를 true로
         // 처리해야할때 사용한다!
         System.out.println("\n회원이 아니면 나가세요! 라고 말한다!아니면 어서오세요!라고 말한다. 결과는? "+(!mem?"나가세요!":"어서오세요!"));
+
+        //////////////////////////////////////
+        // [자바 문자열 : String형]
+        System.out.println();
+        System.out.println("[자바 문자열 : String형]");
+        // 1. 문자열은 텍스트를 저장하는 데 사용
+        String myFace = "I Am Very Handsome!";
+        // 2. String변수에는 큰따옴표로 묶인 문자열임!
+        System.out.println("myFace출력: " + myFace);
+        System.out.println("문자열길이는? " + myFace.length());
+
+        // 3. 문자열 길이
+        //     length()메소드
+        // 4.문자열 메서드
+        // toUpperCase() - 모두 대문자 변환
+        System.out.println("myFace모두대문자 : " + myFace.toUpperCase());
+        // toLowerCase() - 모두 소문자 변환
+        System.out.println("myFace모두소문자 : " + myFace.toLowerCase());
+
+        // 5. 문자열 시작순번 : 
+        // indexOf()메서드 
+        // - 문자열(공백 포함)에서 지정된 텍스트가 처음 나타나는 인덱스순번 숫자리턴
+        // 대소문자를 구분, 찾는문자열 없으면 -1리턴, 0부터셈
+        System.out.println("myFace문자열시작위치 : " + myFace.indexOf("Handsome"));
+        System.out.println("myFace문자열시작위치 : " + myFace.indexOf("handsome")); // 없으면 -1
+
+        // 6. 문자열 일부가져오기
+        // substring(시작순번,끝순번의다음순번)
+        System.out.println("Hand만 잘라서 가져와봐! " + myFace.substring(10, 14));
+
+        // 7. 문자열 일부변경하기
+        // replace(바꿀문자열, 바뀔문자열)
+        System.out.println("Handsome을 Smart로 변경 : " + myFace.replace("Handsome", "Smart"));
+
+        // 8. 문자열 반복하기
+        // repeat(반봇횟수)
+        var nayana = "나야나!";
+        // var로 선언하면 왼쪽의 데이터 형에 따라
+        // 자동으로 형을 정해주는 선언방법(Java10부터 도입)
+        // 자바에서 주로사용되지는 않으니 참고로 알아두자!
+        System.out.println("나야나! 열번반복하기 : " + nayana.repeat(10));
+
+        // 9. 문자열 연결
+        // + 연산자를 문자열 사이에 사용하여 결합
+
+        // 10. 문자열 연결 메서드 : concat()
+        // 하나의 문자열에 이어서 문자열을 연결하는 메서드
+        // ex) 
+        String name = "유";
+        String name2 = "룡";
+        String familyName = "공";
+        System.out.println(familyName.concat("문자열연결 : " + name)); // "공유"
+        System.out.println(familyName.concat("공유의동생이름은? " + name2)); // "공룡"
+
+        // 11. 특수문자 이스케이프 하기 (앞에 역슬래쉬사용!)
+        // \'	'	홑따옴표
+        // \"	"	쌍따옴표
+        // \\	\	역슬래쉬
+        System.out.println("쌍따옴표안에 \"쌍따옴표\"쓰기");
+        System.out.println("홑따옴표 특수문자처리 : It\'s mine!");
+        System.out.println("역슬래쉬\\이렇게");
+        // 뒤에 공백을 없앰!
+        
+        // 참고) 기타 이스케이프 시퀀스
+        // \n	개행	
+        // \r	엔터
+        // \t	탭	
+        // \b	백스페이스	
+        System.out.println("개행은 \n이렇게!");
+        System.out.println("엔터는 \r이렇게! 엔터는 여기서 다시 실행함!");
+        System.out.println("엔터는 \r이렇게! 엔터는 여기서 다시 실행함!");
+        System.out.println("백스페이스는\b 이렇게!");
+        
+
+        // [ 수학 메서드 ] - Math 클래스 (정적객체)
+
+        // 1.Math.max( x,y ) - x 와 y 중 최대값
+        // : 다음 형들 중 같은 것 끼리 비교함
+        // int, long, float, double
+        System.out.println("10.1과 10.11 중 큰것은? " + Math.max(10.1,10.11));
+        // 2.Math.min( x,y ) -  x 와 y 중 최소값
+        System.out.println("10001과 10002 중 작은것은? " + Math.min(10001,10002));
+        // 3. Math.sqrt( x ) - 제곱근값
+        System.out.println("2의 제곱근값은? " + Math.sqrt(2));
+        // 4. Math.abs(x) - 절대값
+        System.out.println("나는 1000원이 있는데 10000원을 썻다. 순수차액은 얼마? " + Math.abs(1000-10000) + "원");
+        // 5. Math.random() - 0.0(포함)과 1.0(제외) 사이의 난수
+        // ceil() 올림, floor() 내림, round() 반올림
+        System.out.println("1~5 사이의 난수는? " + Math.random()*5);
     }
 }
