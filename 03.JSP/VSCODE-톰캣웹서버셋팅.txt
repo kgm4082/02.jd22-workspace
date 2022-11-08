@@ -5,6 +5,11 @@
 
 (1) vscode와 연동을 위해 다음의 확장프로그램을 설치한다!
 ->>> Remote Server Protocal UI
+-> 주의: 설치후 "servers"탭이 하단에 안보이면
+vscode 탐색기의 ... 보이기 옵션 버튼에서 "servers"를 체크한다!
+-> 서버 셋팅순서:
+    1. servers 탭을 클릭하여 열어준다!
+    2. 오른쪽 아이콘 "Create New Server..."버튼 클릭한다.
 
 (2) JSP 확장자 사용을 위해 다음의 확장 프로그램을 설치한다!
 ->>> Java Server Pages(JSP) - 유지보수중단 되었으나 JSP로 유일함!
