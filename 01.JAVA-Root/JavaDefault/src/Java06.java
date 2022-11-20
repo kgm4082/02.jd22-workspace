@@ -39,14 +39,14 @@ public class Java06 {
          *    재정의 하는 것이다!(부모메서드를 자식이 올라탐!!!)
          * 
          * [ 메서드에서의 변수사용 ]
-         * 1. 메서드 내에서 선언된 변수는 메서드 내에서 어디서나 사용가능하다!
+         * 1. 메서드 내에서 선언된 변수는 메서드 내에서 어디서나 사용가능하다.
          * (단, 선언할당 후 아래에서 사용가능함! 위에서는 사용불가!)
          * 2. 메서드 바깥의 변수는 메서드 내에서 3가지로 호출된다.
-         *  1) static 메서드는 클래스 객체 생성 후 사용한다.
-         *  2) static이 아닌 메서드는 바로 변수를 사용할 수 있다.
-         *  -> 이유 : static이 아닌 메서드는 객체생성을 해야하므로
-         *          클래스하위의 모든 멤버변수에 접근할 수 있다!
-         *  3) 변수에 static을 사용하면 모든 메서드에서 바로 사용할 수 있다!
+         *    1) static 메서드는 클래스 객체 생성 후 사용한다.
+         *    2) static이 아닌 메서드는 바로 변수를 사용할 수 있다.
+         *      -> 이유 : static이 아닌 메서드는 객체생성을 해야하므로
+         *              클래스하위의 모든 맴버변수에 접근할 수 있다!
+         *    3) 변수에 static을 사용하면 모든 메서드에서 바로 사용할 수 있다!
          */
 
          // 나의 첫 메서드 호출!!
@@ -86,20 +86,22 @@ public class Java06 {
         System.out.println("오버로딩2: "+
         j06.makeTitle(99.999));
 
+
         // 10에서 1까지 더한 결과출력 재귀메서드 호출!
         System.out.println(sumNums(10));
 
-
-
     } ////////////// main 메서드 /////////////////
 
-    //// 클래스 멤버변수 : 클래스 바로 아래 선언된 변수들(메서드 바깥에 있음!)
-    // -> 클래스의 속성에 해당됨(명사적특징)에 해당됨!
+    /// 클래스 맴버변수 : 클래스 바로 아래 선언된 변수들(메서드 바깥에 있음!)
+    // -> 클래스의 속성(명사적특징)에 해당됨!
 
     // 1형 : 변수형으로만 선언할당한 변수
-    String newMsg  = "새롭게힘내!";
-    // 2형 : static 선언변수
+    String newMsg = "새롭게 힘내!";
+    // 2형 : static 선언 변수
     static String addMsg = "화이팅!";
+
+
+
 
     // 나의 첫 메서드
     public static void myFirst(){
@@ -107,15 +109,15 @@ public class Java06 {
         Java06 myObj = new Java06();
 
         // 함수내 지역변수
-        int myNum = 1000; 
+        int myNum = 1000;
 
         System.out.println("나는 자바개발자다!" + addMsg + myObj.newMsg + myNum);
-        // int myNum = 1000; -> 아래에서 호출불가!
+        // int myNum = 1000; -> 아래만들면 호출불가!
     } //// myFirst 메서드 ////
 
     // 나의 두번째 메서드
     public static String mySecond(String family){
-        return family + "씨 가문" + addMsg;
+        return family + "씨 가문,"+addMsg;
     } ////// mySecond 메서드 /////
 
     // 나의 세번째 메서드 -> static 이 없음!
@@ -133,7 +135,7 @@ public class Java06 {
     // 메서드 명이 똑같다!!! -> 오버로딩 메서드!!!
     public String makeTitle(int month, String evt, int people){
         return month + "월의 " + 
-        evt + "이벤트 당첨자는 " + people + "명입니다!" + newMsg;
+        evt + "이벤트 당첨자는 " + people + "명입니다!"+ newMsg;
     } ////////////// makeTitle 메서드 ////////////
 
     // 표어만들기를 똑같이 하는데 내용이 다르므로 전달값도 다름
@@ -142,22 +144,23 @@ public class Java06 {
         return ndata + "%의 확률로 당신에게 당첨의 기회를 드립니다! ";
     } ////////////// makeTitle 메서드 ////////////
 
-    // 재귀 메서드
-    // -> 메서드 자기자신을 다시 호출하여 결과를 만드는 메서드
-    // 1부터 10까지 더하여 그 결과를 화면에 계산식과 함꼐 출력하시오
+
+    //////////////////////////////
+    // 재귀 메서드 ////////////////
+    // -> 메서드 자기자신을 다시 호출하여 결과를 만드는 메서드이다!
+    // 10부터 1까지 더하여 그 결과를 화면에 계산식과 함께 출력하시오!
     // 바로 호출 가능한 static 메서드로 만들자!
     public static int sumNums(int num) { // 10부터 1까지 더한다면 10이 들어옴!
         if(num > 0){
             // 중간 계산식 만들기 : 1이되기까지 + 기호로 연결하기
             System.out.print(num+(num==1?"=":"+"));
-            return num + sumNums(num -1);
-            // 재귀호출방식 : 기존값에 1작은 숫자를 더함(0이상일때 까지!)
+            return num + sumNums(num - 1);
+            // 재귀호출방식! : 기존값에 1작은 숫자를 더함(0이상일때 까지!)
         }
-        else {
+        else{
             return num;
         }
-
-    }
+    } ////////// sumNums 메서드 /////////
 
 
 
